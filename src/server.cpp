@@ -60,8 +60,10 @@ static gboolean emit_test_status_signal(gconstpointer p) {
   printf("emit_test_status_signal invoked\n");
   if (skeleton != NULL) {
     gdbus_test_emit_test_signal(skeleton, status_value);
+    return false;
   }
   status_value++;
+  return true;
 }
 
 int main(int argc, char const *argv[]) {
