@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# gdbus-codegen --generate-c-code=Hello framework/interface/Hello.xml
-gdbus-codegen --generate-c-code=Hello  --c-namespace hello --interface-prefix com.yft.hello. framework/interface/Hello.xml
+# gdbus-codegen --generate-c-code=Test framework/interface/Test.xml
+gdbus-codegen --generate-c-code=Test --c-namespace gdbus --interface-prefix com.yao.xie.gdbus. framework/interface/Test.xml
 
-cp Hello.h framework/include
-cp Hello.c framework/src
-rm Hello.*
-rm -rf build
+cp Test.h framework/include
+cp Test.c framework/src
+rm Test.*
+# rm -rf build
 cmake -B build
 
 make -C build

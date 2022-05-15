@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<node name="/com/yao/xie/test">
+	<interface name="com.yao.xie.gdbus.test">
+		<method name="setName">
+			<arg name="name" type="s" direction="in" />
+		</method>
+		<signal name="testSignal">
+			<arg name="status" type="i" />
+		</signal>
+	</interface>
+</node>

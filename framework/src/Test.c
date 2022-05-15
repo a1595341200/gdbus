@@ -10,7 +10,7 @@
 #  include "config.h"
 #endif
 
-#include "Hello.h"
+#include "Test.h"
 
 #include <string.h>
 #ifdef G_OS_UNIX
@@ -152,57 +152,57 @@ _g_value_equal (const GValue *a, const GValue *b)
 }
 
 /* ------------------------------------------------------------------------
- * Code for interface com.yft.hello.test
+ * Code for interface com.yao.xie.gdbus.test
  * ------------------------------------------------------------------------
  */
 
 /**
- * SECTION:helloTest
- * @title: helloTest
- * @short_description: Generated C code for the com.yft.hello.test D-Bus interface
+ * SECTION:gdbusTest
+ * @title: gdbusTest
+ * @short_description: Generated C code for the com.yao.xie.gdbus.test D-Bus interface
  *
- * This section contains code for working with the <link linkend="gdbus-interface-com-yft-hello-test.top_of_page">com.yft.hello.test</link> D-Bus interface in C.
+ * This section contains code for working with the <link linkend="gdbus-interface-com-yao-xie-gdbus-test.top_of_page">com.yao.xie.gdbus.test</link> D-Bus interface in C.
  */
 
-/* ---- Introspection data for com.yft.hello.test ---- */
+/* ---- Introspection data for com.yao.xie.gdbus.test ---- */
 
-static const _ExtendedGDBusArgInfo _hello_test_method_info_set_version_IN_ARG_version =
+static const _ExtendedGDBusArgInfo _gdbus_test_method_info_set_name_IN_ARG_name =
 {
   {
     -1,
-    (gchar *) "version",
+    (gchar *) "name",
     (gchar *) "s",
     NULL
   },
   FALSE
 };
 
-static const GDBusArgInfo * const _hello_test_method_info_set_version_IN_ARG_pointers[] =
+static const GDBusArgInfo * const _gdbus_test_method_info_set_name_IN_ARG_pointers[] =
 {
-  &_hello_test_method_info_set_version_IN_ARG_version.parent_struct,
+  &_gdbus_test_method_info_set_name_IN_ARG_name.parent_struct,
   NULL
 };
 
-static const _ExtendedGDBusMethodInfo _hello_test_method_info_set_version =
+static const _ExtendedGDBusMethodInfo _gdbus_test_method_info_set_name =
 {
   {
     -1,
-    (gchar *) "setVersion",
-    (GDBusArgInfo **) &_hello_test_method_info_set_version_IN_ARG_pointers,
+    (gchar *) "setName",
+    (GDBusArgInfo **) &_gdbus_test_method_info_set_name_IN_ARG_pointers,
     NULL,
     NULL
   },
-  "handle-set-version",
+  "handle-set-name",
   FALSE
 };
 
-static const GDBusMethodInfo * const _hello_test_method_info_pointers[] =
+static const GDBusMethodInfo * const _gdbus_test_method_info_pointers[] =
 {
-  &_hello_test_method_info_set_version.parent_struct,
+  &_gdbus_test_method_info_set_name.parent_struct,
   NULL
 };
 
-static const _ExtendedGDBusArgInfo _hello_test_signal_info_test_status_ARG_status =
+static const _ExtendedGDBusArgInfo _gdbus_test_signal_info_test_signal_ARG_status =
 {
   {
     -1,
@@ -213,36 +213,36 @@ static const _ExtendedGDBusArgInfo _hello_test_signal_info_test_status_ARG_statu
   FALSE
 };
 
-static const GDBusArgInfo * const _hello_test_signal_info_test_status_ARG_pointers[] =
+static const GDBusArgInfo * const _gdbus_test_signal_info_test_signal_ARG_pointers[] =
 {
-  &_hello_test_signal_info_test_status_ARG_status.parent_struct,
+  &_gdbus_test_signal_info_test_signal_ARG_status.parent_struct,
   NULL
 };
 
-static const _ExtendedGDBusSignalInfo _hello_test_signal_info_test_status =
+static const _ExtendedGDBusSignalInfo _gdbus_test_signal_info_test_signal =
 {
   {
     -1,
-    (gchar *) "testStatus",
-    (GDBusArgInfo **) &_hello_test_signal_info_test_status_ARG_pointers,
+    (gchar *) "testSignal",
+    (GDBusArgInfo **) &_gdbus_test_signal_info_test_signal_ARG_pointers,
     NULL
   },
-  "test-status"
+  "test-signal"
 };
 
-static const GDBusSignalInfo * const _hello_test_signal_info_pointers[] =
+static const GDBusSignalInfo * const _gdbus_test_signal_info_pointers[] =
 {
-  &_hello_test_signal_info_test_status.parent_struct,
+  &_gdbus_test_signal_info_test_signal.parent_struct,
   NULL
 };
 
-static const _ExtendedGDBusInterfaceInfo _hello_test_interface_info =
+static const _ExtendedGDBusInterfaceInfo _gdbus_test_interface_info =
 {
   {
     -1,
-    (gchar *) "com.yft.hello.test",
-    (GDBusMethodInfo **) &_hello_test_method_info_pointers,
-    (GDBusSignalInfo **) &_hello_test_signal_info_pointers,
+    (gchar *) "com.yao.xie.gdbus.test",
+    (GDBusMethodInfo **) &_gdbus_test_method_info_pointers,
+    (GDBusSignalInfo **) &_gdbus_test_signal_info_pointers,
     NULL,
     NULL
   },
@@ -251,30 +251,30 @@ static const _ExtendedGDBusInterfaceInfo _hello_test_interface_info =
 
 
 /**
- * hello_test_interface_info:
+ * gdbus_test_interface_info:
  *
- * Gets a machine-readable description of the <link linkend="gdbus-interface-com-yft-hello-test.top_of_page">com.yft.hello.test</link> D-Bus interface.
+ * Gets a machine-readable description of the <link linkend="gdbus-interface-com-yao-xie-gdbus-test.top_of_page">com.yao.xie.gdbus.test</link> D-Bus interface.
  *
  * Returns: (transfer none): A #GDBusInterfaceInfo. Do not free.
  */
 GDBusInterfaceInfo *
-hello_test_interface_info (void)
+gdbus_test_interface_info (void)
 {
-  return (GDBusInterfaceInfo *) &_hello_test_interface_info.parent_struct;
+  return (GDBusInterfaceInfo *) &_gdbus_test_interface_info.parent_struct;
 }
 
 /**
- * hello_test_override_properties:
+ * gdbus_test_override_properties:
  * @klass: The class structure for a #GObject derived class.
  * @property_id_begin: The property id to assign to the first overridden property.
  *
- * Overrides all #GObject properties in the #helloTest interface for a concrete class.
+ * Overrides all #GObject properties in the #gdbusTest interface for a concrete class.
  * The properties are overridden in the order they are defined.
  *
  * Returns: The last property id.
  */
 guint
-hello_test_override_properties (GObjectClass *klass, guint property_id_begin)
+gdbus_test_override_properties (GObjectClass *klass, guint property_id_begin)
 {
   return property_id_begin - 1;
 }
@@ -282,43 +282,43 @@ hello_test_override_properties (GObjectClass *klass, guint property_id_begin)
 
 
 /**
- * helloTest:
+ * gdbusTest:
  *
- * Abstract interface type for the D-Bus interface <link linkend="gdbus-interface-com-yft-hello-test.top_of_page">com.yft.hello.test</link>.
+ * Abstract interface type for the D-Bus interface <link linkend="gdbus-interface-com-yao-xie-gdbus-test.top_of_page">com.yao.xie.gdbus.test</link>.
  */
 
 /**
- * helloTestIface:
+ * gdbusTestIface:
  * @parent_iface: The parent interface.
- * @handle_set_version: Handler for the #helloTest::handle-set-version signal.
- * @test_status: Handler for the #helloTest::test-status signal.
+ * @handle_set_name: Handler for the #gdbusTest::handle-set-name signal.
+ * @test_signal: Handler for the #gdbusTest::test-signal signal.
  *
- * Virtual table for the D-Bus interface <link linkend="gdbus-interface-com-yft-hello-test.top_of_page">com.yft.hello.test</link>.
+ * Virtual table for the D-Bus interface <link linkend="gdbus-interface-com-yao-xie-gdbus-test.top_of_page">com.yao.xie.gdbus.test</link>.
  */
 
-typedef helloTestIface helloTestInterface;
-G_DEFINE_INTERFACE (helloTest, hello_test, G_TYPE_OBJECT)
+typedef gdbusTestIface gdbusTestInterface;
+G_DEFINE_INTERFACE (gdbusTest, gdbus_test, G_TYPE_OBJECT)
 
 static void
-hello_test_default_init (helloTestIface *iface)
+gdbus_test_default_init (gdbusTestIface *iface)
 {
   /* GObject signals for incoming D-Bus method calls: */
   /**
-   * helloTest::handle-set-version:
-   * @object: A #helloTest.
+   * gdbusTest::handle-set-name:
+   * @object: A #gdbusTest.
    * @invocation: A #GDBusMethodInvocation.
-   * @arg_version: Argument passed by remote caller.
+   * @arg_name: Argument passed by remote caller.
    *
-   * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-com-yft-hello-test.setVersion">setVersion()</link> D-Bus method.
+   * Signal emitted when a remote caller is invoking the <link linkend="gdbus-method-com-yao-xie-gdbus-test.setName">setName()</link> D-Bus method.
    *
-   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call hello_test_complete_set_version() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
+   * If a signal handler returns %TRUE, it means the signal handler will handle the invocation (e.g. take a reference to @invocation and eventually call gdbus_test_complete_set_name() or e.g. g_dbus_method_invocation_return_error() on it) and no order signal handlers will run. If no signal handler handles the invocation, the %G_DBUS_ERROR_UNKNOWN_METHOD error is returned.
    *
    * Returns: %TRUE if the invocation was handled, %FALSE to let other signal handlers run.
    */
-  g_signal_new ("handle-set-version",
+  g_signal_new ("handle-set-name",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (helloTestIface, handle_set_version),
+    G_STRUCT_OFFSET (gdbusTestIface, handle_set_name),
     g_signal_accumulator_true_handled,
     NULL,
     g_cclosure_marshal_generic,
@@ -328,18 +328,18 @@ hello_test_default_init (helloTestIface *iface)
 
   /* GObject signals for received D-Bus signals: */
   /**
-   * helloTest::test-status:
-   * @object: A #helloTest.
+   * gdbusTest::test-signal:
+   * @object: A #gdbusTest.
    * @arg_status: Argument.
    *
-   * On the client-side, this signal is emitted whenever the D-Bus signal <link linkend="gdbus-signal-com-yft-hello-test.testStatus">"testStatus"</link> is received.
+   * On the client-side, this signal is emitted whenever the D-Bus signal <link linkend="gdbus-signal-com-yao-xie-gdbus-test.testSignal">"testSignal"</link> is received.
    *
    * On the service-side, this signal can be used with e.g. g_signal_emit_by_name() to make the object emit the D-Bus signal.
    */
-  g_signal_new ("test-status",
+  g_signal_new ("test-signal",
     G_TYPE_FROM_INTERFACE (iface),
     G_SIGNAL_RUN_LAST,
-    G_STRUCT_OFFSET (helloTestIface, test_status),
+    G_STRUCT_OFFSET (gdbusTestIface, test_signal),
     NULL,
     NULL,
     g_cclosure_marshal_generic,
@@ -349,46 +349,46 @@ hello_test_default_init (helloTestIface *iface)
 }
 
 /**
- * hello_test_emit_test_status:
- * @object: A #helloTest.
+ * gdbus_test_emit_test_signal:
+ * @object: A #gdbusTest.
  * @arg_status: Argument to pass with the signal.
  *
- * Emits the <link linkend="gdbus-signal-com-yft-hello-test.testStatus">"testStatus"</link> D-Bus signal.
+ * Emits the <link linkend="gdbus-signal-com-yao-xie-gdbus-test.testSignal">"testSignal"</link> D-Bus signal.
  */
 void
-hello_test_emit_test_status (
-    helloTest *object,
+gdbus_test_emit_test_signal (
+    gdbusTest *object,
     gint arg_status)
 {
-  g_signal_emit_by_name (object, "test-status", arg_status);
+  g_signal_emit_by_name (object, "test-signal", arg_status);
 }
 
 /**
- * hello_test_call_set_version:
- * @proxy: A #helloTestProxy.
- * @arg_version: Argument to pass with the method invocation.
+ * gdbus_test_call_set_name:
+ * @proxy: A #gdbusTestProxy.
+ * @arg_name: Argument to pass with the method invocation.
  * @cancellable: (nullable): A #GCancellable or %NULL.
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied or %NULL.
  * @user_data: User data to pass to @callback.
  *
- * Asynchronously invokes the <link linkend="gdbus-method-com-yft-hello-test.setVersion">setVersion()</link> D-Bus method on @proxy.
+ * Asynchronously invokes the <link linkend="gdbus-method-com-yao-xie-gdbus-test.setName">setName()</link> D-Bus method on @proxy.
  * When the operation is finished, @callback will be invoked in the thread-default main loop of the thread you are calling this method from (see g_main_context_push_thread_default()).
- * You can then call hello_test_call_set_version_finish() to get the result of the operation.
+ * You can then call gdbus_test_call_set_name_finish() to get the result of the operation.
  *
- * See hello_test_call_set_version_sync() for the synchronous, blocking version of this method.
+ * See gdbus_test_call_set_name_sync() for the synchronous, blocking version of this method.
  */
 void
-hello_test_call_set_version (
-    helloTest *proxy,
-    const gchar *arg_version,
+gdbus_test_call_set_name (
+    gdbusTest *proxy,
+    const gchar *arg_name,
     GCancellable *cancellable,
     GAsyncReadyCallback callback,
     gpointer user_data)
 {
   g_dbus_proxy_call (G_DBUS_PROXY (proxy),
-    "setVersion",
+    "setName",
     g_variant_new ("(s)",
-                   arg_version),
+                   arg_name),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -397,18 +397,18 @@ hello_test_call_set_version (
 }
 
 /**
- * hello_test_call_set_version_finish:
- * @proxy: A #helloTestProxy.
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to hello_test_call_set_version().
+ * gdbus_test_call_set_name_finish:
+ * @proxy: A #gdbusTestProxy.
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to gdbus_test_call_set_name().
  * @error: Return location for error or %NULL.
  *
- * Finishes an operation started with hello_test_call_set_version().
+ * Finishes an operation started with gdbus_test_call_set_name().
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-hello_test_call_set_version_finish (
-    helloTest *proxy,
+gdbus_test_call_set_name_finish (
+    gdbusTest *proxy,
     GAsyncResult *res,
     GError **error)
 {
@@ -424,30 +424,30 @@ _out:
 }
 
 /**
- * hello_test_call_set_version_sync:
- * @proxy: A #helloTestProxy.
- * @arg_version: Argument to pass with the method invocation.
+ * gdbus_test_call_set_name_sync:
+ * @proxy: A #gdbusTestProxy.
+ * @arg_name: Argument to pass with the method invocation.
  * @cancellable: (nullable): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL.
  *
- * Synchronously invokes the <link linkend="gdbus-method-com-yft-hello-test.setVersion">setVersion()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
+ * Synchronously invokes the <link linkend="gdbus-method-com-yao-xie-gdbus-test.setName">setName()</link> D-Bus method on @proxy. The calling thread is blocked until a reply is received.
  *
- * See hello_test_call_set_version() for the asynchronous version of this method.
+ * See gdbus_test_call_set_name() for the asynchronous version of this method.
  *
  * Returns: (skip): %TRUE if the call succeded, %FALSE if @error is set.
  */
 gboolean
-hello_test_call_set_version_sync (
-    helloTest *proxy,
-    const gchar *arg_version,
+gdbus_test_call_set_name_sync (
+    gdbusTest *proxy,
+    const gchar *arg_name,
     GCancellable *cancellable,
     GError **error)
 {
   GVariant *_ret;
   _ret = g_dbus_proxy_call_sync (G_DBUS_PROXY (proxy),
-    "setVersion",
+    "setName",
     g_variant_new ("(s)",
-                   arg_version),
+                   arg_name),
     G_DBUS_CALL_FLAGS_NONE,
     -1,
     cancellable,
@@ -462,17 +462,17 @@ _out:
 }
 
 /**
- * hello_test_complete_set_version:
- * @object: A #helloTest.
+ * gdbus_test_complete_set_name:
+ * @object: A #gdbusTest.
  * @invocation: (transfer full): A #GDBusMethodInvocation.
  *
- * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-com-yft-hello-test.setVersion">setVersion()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
+ * Helper function used in service implementations to finish handling invocations of the <link linkend="gdbus-method-com-yao-xie-gdbus-test.setName">setName()</link> D-Bus method. If you instead want to finish handling an invocation by returning an error, use g_dbus_method_invocation_return_error() or similar.
  *
  * This method will free @invocation, you cannot use it afterwards.
  */
 void
-hello_test_complete_set_version (
-    helloTest *object,
+gdbus_test_complete_set_name (
+    gdbusTest *object,
     GDBusMethodInvocation *invocation)
 {
   g_dbus_method_invocation_return_value (invocation,
@@ -482,45 +482,45 @@ hello_test_complete_set_version (
 /* ------------------------------------------------------------------------ */
 
 /**
- * helloTestProxy:
+ * gdbusTestProxy:
  *
- * The #helloTestProxy structure contains only private data and should only be accessed using the provided API.
+ * The #gdbusTestProxy structure contains only private data and should only be accessed using the provided API.
  */
 
 /**
- * helloTestProxyClass:
+ * gdbusTestProxyClass:
  * @parent_class: The parent class.
  *
- * Class structure for #helloTestProxy.
+ * Class structure for #gdbusTestProxy.
  */
 
-struct _helloTestProxyPrivate
+struct _gdbusTestProxyPrivate
 {
   GData *qdata;
 };
 
-static void hello_test_proxy_iface_init (helloTestIface *iface);
+static void gdbus_test_proxy_iface_init (gdbusTestIface *iface);
 
 #if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
-G_DEFINE_TYPE_WITH_CODE (helloTestProxy, hello_test_proxy, G_TYPE_DBUS_PROXY,
-                         G_ADD_PRIVATE (helloTestProxy)
-                         G_IMPLEMENT_INTERFACE (HELLO_TYPE_TEST, hello_test_proxy_iface_init))
+G_DEFINE_TYPE_WITH_CODE (gdbusTestProxy, gdbus_test_proxy, G_TYPE_DBUS_PROXY,
+                         G_ADD_PRIVATE (gdbusTestProxy)
+                         G_IMPLEMENT_INTERFACE (GDBUS_TYPE_TEST, gdbus_test_proxy_iface_init))
 
 #else
-G_DEFINE_TYPE_WITH_CODE (helloTestProxy, hello_test_proxy, G_TYPE_DBUS_PROXY,
-                         G_IMPLEMENT_INTERFACE (HELLO_TYPE_TEST, hello_test_proxy_iface_init))
+G_DEFINE_TYPE_WITH_CODE (gdbusTestProxy, gdbus_test_proxy, G_TYPE_DBUS_PROXY,
+                         G_IMPLEMENT_INTERFACE (GDBUS_TYPE_TEST, gdbus_test_proxy_iface_init))
 
 #endif
 static void
-hello_test_proxy_finalize (GObject *object)
+gdbus_test_proxy_finalize (GObject *object)
 {
-  helloTestProxy *proxy = HELLO_TEST_PROXY (object);
+  gdbusTestProxy *proxy = GDBUS_TEST_PROXY (object);
   g_datalist_clear (&proxy->priv->qdata);
-  G_OBJECT_CLASS (hello_test_proxy_parent_class)->finalize (object);
+  G_OBJECT_CLASS (gdbus_test_proxy_parent_class)->finalize (object);
 }
 
 static void
-hello_test_proxy_get_property (GObject      *object,
+gdbus_test_proxy_get_property (GObject      *object,
   guint         prop_id,
   GValue       *value,
   GParamSpec   *pspec G_GNUC_UNUSED)
@@ -528,7 +528,7 @@ hello_test_proxy_get_property (GObject      *object,
 }
 
 static void
-hello_test_proxy_set_property (GObject      *object,
+gdbus_test_proxy_set_property (GObject      *object,
   guint         prop_id,
   const GValue *value,
   GParamSpec   *pspec G_GNUC_UNUSED)
@@ -536,7 +536,7 @@ hello_test_proxy_set_property (GObject      *object,
 }
 
 static void
-hello_test_proxy_g_signal (GDBusProxy *proxy,
+gdbus_test_proxy_g_signal (GDBusProxy *proxy,
   const gchar *sender_name G_GNUC_UNUSED,
   const gchar *signal_name,
   GVariant *parameters)
@@ -548,12 +548,12 @@ hello_test_proxy_g_signal (GDBusProxy *proxy,
   gsize num_params;
   gsize n;
   guint signal_id;
-  info = (_ExtendedGDBusSignalInfo *) g_dbus_interface_info_lookup_signal ((GDBusInterfaceInfo *) &_hello_test_interface_info.parent_struct, signal_name);
+  info = (_ExtendedGDBusSignalInfo *) g_dbus_interface_info_lookup_signal ((GDBusInterfaceInfo *) &_gdbus_test_interface_info.parent_struct, signal_name);
   if (info == NULL)
     return;
   num_params = g_variant_n_children (parameters);
   paramv = g_new0 (GValue, num_params + 1);
-  g_value_init (&paramv[0], HELLO_TYPE_TEST);
+  g_value_init (&paramv[0], GDBUS_TYPE_TEST);
   g_value_set_object (&paramv[0], proxy);
   g_variant_iter_init (&iter, parameters);
   n = 1;
@@ -570,7 +570,7 @@ hello_test_proxy_g_signal (GDBusProxy *proxy,
         g_dbus_gvariant_to_gvalue (child, &paramv[n++]);
       g_variant_unref (child);
     }
-  signal_id = g_signal_lookup (info->signal_name, HELLO_TYPE_TEST);
+  signal_id = g_signal_lookup (info->signal_name, GDBUS_TYPE_TEST);
   g_signal_emitv (paramv, signal_id, 0, NULL);
   for (n = 0; n < num_params + 1; n++)
     g_value_unset (&paramv[n]);
@@ -578,11 +578,11 @@ hello_test_proxy_g_signal (GDBusProxy *proxy,
 }
 
 static void
-hello_test_proxy_g_properties_changed (GDBusProxy *_proxy,
+gdbus_test_proxy_g_properties_changed (GDBusProxy *_proxy,
   GVariant *changed_properties,
   const gchar *const *invalidated_properties)
 {
-  helloTestProxy *proxy = HELLO_TEST_PROXY (_proxy);
+  gdbusTestProxy *proxy = GDBUS_TEST_PROXY (_proxy);
   guint n;
   const gchar *key;
   GVariantIter *iter;
@@ -590,7 +590,7 @@ hello_test_proxy_g_properties_changed (GDBusProxy *_proxy,
   g_variant_get (changed_properties, "a{sv}", &iter);
   while (g_variant_iter_next (iter, "{&sv}", &key, NULL))
     {
-      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_hello_test_interface_info.parent_struct, key);
+      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_gdbus_test_interface_info.parent_struct, key);
       g_datalist_remove_data (&proxy->priv->qdata, key);
       if (info != NULL)
         g_object_notify (G_OBJECT (proxy), info->hyphen_name);
@@ -598,7 +598,7 @@ hello_test_proxy_g_properties_changed (GDBusProxy *_proxy,
   g_variant_iter_free (iter);
   for (n = 0; invalidated_properties[n] != NULL; n++)
     {
-      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_hello_test_interface_info.parent_struct, invalidated_properties[n]);
+      info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_gdbus_test_interface_info.parent_struct, invalidated_properties[n]);
       g_datalist_remove_data (&proxy->priv->qdata, invalidated_properties[n]);
       if (info != NULL)
         g_object_notify (G_OBJECT (proxy), info->hyphen_name);
@@ -606,44 +606,44 @@ hello_test_proxy_g_properties_changed (GDBusProxy *_proxy,
 }
 
 static void
-hello_test_proxy_init (helloTestProxy *proxy)
+gdbus_test_proxy_init (gdbusTestProxy *proxy)
 {
 #if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
-  proxy->priv = hello_test_proxy_get_instance_private (proxy);
+  proxy->priv = gdbus_test_proxy_get_instance_private (proxy);
 #else
-  proxy->priv = G_TYPE_INSTANCE_GET_PRIVATE (proxy, HELLO_TYPE_TEST_PROXY, helloTestProxyPrivate);
+  proxy->priv = G_TYPE_INSTANCE_GET_PRIVATE (proxy, GDBUS_TYPE_TEST_PROXY, gdbusTestProxyPrivate);
 #endif
 
-  g_dbus_proxy_set_interface_info (G_DBUS_PROXY (proxy), hello_test_interface_info ());
+  g_dbus_proxy_set_interface_info (G_DBUS_PROXY (proxy), gdbus_test_interface_info ());
 }
 
 static void
-hello_test_proxy_class_init (helloTestProxyClass *klass)
+gdbus_test_proxy_class_init (gdbusTestProxyClass *klass)
 {
   GObjectClass *gobject_class;
   GDBusProxyClass *proxy_class;
 
   gobject_class = G_OBJECT_CLASS (klass);
-  gobject_class->finalize     = hello_test_proxy_finalize;
-  gobject_class->get_property = hello_test_proxy_get_property;
-  gobject_class->set_property = hello_test_proxy_set_property;
+  gobject_class->finalize     = gdbus_test_proxy_finalize;
+  gobject_class->get_property = gdbus_test_proxy_get_property;
+  gobject_class->set_property = gdbus_test_proxy_set_property;
 
   proxy_class = G_DBUS_PROXY_CLASS (klass);
-  proxy_class->g_signal = hello_test_proxy_g_signal;
-  proxy_class->g_properties_changed = hello_test_proxy_g_properties_changed;
+  proxy_class->g_signal = gdbus_test_proxy_g_signal;
+  proxy_class->g_properties_changed = gdbus_test_proxy_g_properties_changed;
 
 #if GLIB_VERSION_MAX_ALLOWED < GLIB_VERSION_2_38
-  g_type_class_add_private (klass, sizeof (helloTestProxyPrivate));
+  g_type_class_add_private (klass, sizeof (gdbusTestProxyPrivate));
 #endif
 }
 
 static void
-hello_test_proxy_iface_init (helloTestIface *iface)
+gdbus_test_proxy_iface_init (gdbusTestIface *iface)
 {
 }
 
 /**
- * hello_test_proxy_new:
+ * gdbus_test_proxy_new:
  * @connection: A #GDBusConnection.
  * @flags: Flags from the #GDBusProxyFlags enumeration.
  * @name: (nullable): A bus name (well-known or unique) or %NULL if @connection is not a message bus connection.
@@ -652,15 +652,15 @@ hello_test_proxy_iface_init (helloTestIface *iface)
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied.
  * @user_data: User data to pass to @callback.
  *
- * Asynchronously creates a proxy for the D-Bus interface <link linkend="gdbus-interface-com-yft-hello-test.top_of_page">com.yft.hello.test</link>. See g_dbus_proxy_new() for more details.
+ * Asynchronously creates a proxy for the D-Bus interface <link linkend="gdbus-interface-com-yao-xie-gdbus-test.top_of_page">com.yao.xie.gdbus.test</link>. See g_dbus_proxy_new() for more details.
  *
  * When the operation is finished, @callback will be invoked in the thread-default main loop of the thread you are calling this method from (see g_main_context_push_thread_default()).
- * You can then call hello_test_proxy_new_finish() to get the result of the operation.
+ * You can then call gdbus_test_proxy_new_finish() to get the result of the operation.
  *
- * See hello_test_proxy_new_sync() for the synchronous, blocking version of this constructor.
+ * See gdbus_test_proxy_new_sync() for the synchronous, blocking version of this constructor.
  */
 void
-hello_test_proxy_new (
+gdbus_test_proxy_new (
     GDBusConnection     *connection,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -669,20 +669,20 @@ hello_test_proxy_new (
     GAsyncReadyCallback  callback,
     gpointer             user_data)
 {
-  g_async_initable_new_async (HELLO_TYPE_TEST_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "com.yft.hello.test", NULL);
+  g_async_initable_new_async (GDBUS_TYPE_TEST_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "com.yao.xie.gdbus.test", NULL);
 }
 
 /**
- * hello_test_proxy_new_finish:
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to hello_test_proxy_new().
+ * gdbus_test_proxy_new_finish:
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to gdbus_test_proxy_new().
  * @error: Return location for error or %NULL
  *
- * Finishes an operation started with hello_test_proxy_new().
+ * Finishes an operation started with gdbus_test_proxy_new().
  *
- * Returns: (transfer full) (type helloTestProxy): The constructed proxy object or %NULL if @error is set.
+ * Returns: (transfer full) (type gdbusTestProxy): The constructed proxy object or %NULL if @error is set.
  */
-helloTest *
-hello_test_proxy_new_finish (
+gdbusTest *
+gdbus_test_proxy_new_finish (
     GAsyncResult        *res,
     GError             **error)
 {
@@ -692,13 +692,13 @@ hello_test_proxy_new_finish (
   ret = g_async_initable_new_finish (G_ASYNC_INITABLE (source_object), res, error);
   g_object_unref (source_object);
   if (ret != NULL)
-    return HELLO_TEST (ret);
+    return GDBUS_TEST (ret);
   else
     return NULL;
 }
 
 /**
- * hello_test_proxy_new_sync:
+ * gdbus_test_proxy_new_sync:
  * @connection: A #GDBusConnection.
  * @flags: Flags from the #GDBusProxyFlags enumeration.
  * @name: (nullable): A bus name (well-known or unique) or %NULL if @connection is not a message bus connection.
@@ -706,16 +706,16 @@ hello_test_proxy_new_finish (
  * @cancellable: (nullable): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL
  *
- * Synchronously creates a proxy for the D-Bus interface <link linkend="gdbus-interface-com-yft-hello-test.top_of_page">com.yft.hello.test</link>. See g_dbus_proxy_new_sync() for more details.
+ * Synchronously creates a proxy for the D-Bus interface <link linkend="gdbus-interface-com-yao-xie-gdbus-test.top_of_page">com.yao.xie.gdbus.test</link>. See g_dbus_proxy_new_sync() for more details.
  *
  * The calling thread is blocked until a reply is received.
  *
- * See hello_test_proxy_new() for the asynchronous version of this constructor.
+ * See gdbus_test_proxy_new() for the asynchronous version of this constructor.
  *
- * Returns: (transfer full) (type helloTestProxy): The constructed proxy object or %NULL if @error is set.
+ * Returns: (transfer full) (type gdbusTestProxy): The constructed proxy object or %NULL if @error is set.
  */
-helloTest *
-hello_test_proxy_new_sync (
+gdbusTest *
+gdbus_test_proxy_new_sync (
     GDBusConnection     *connection,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -724,16 +724,16 @@ hello_test_proxy_new_sync (
     GError             **error)
 {
   GInitable *ret;
-  ret = g_initable_new (HELLO_TYPE_TEST_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "com.yft.hello.test", NULL);
+  ret = g_initable_new (GDBUS_TYPE_TEST_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-connection", connection, "g-object-path", object_path, "g-interface-name", "com.yao.xie.gdbus.test", NULL);
   if (ret != NULL)
-    return HELLO_TEST (ret);
+    return GDBUS_TEST (ret);
   else
     return NULL;
 }
 
 
 /**
- * hello_test_proxy_new_for_bus:
+ * gdbus_test_proxy_new_for_bus:
  * @bus_type: A #GBusType.
  * @flags: Flags from the #GDBusProxyFlags enumeration.
  * @name: A bus name (well-known or unique).
@@ -742,15 +742,15 @@ hello_test_proxy_new_sync (
  * @callback: A #GAsyncReadyCallback to call when the request is satisfied.
  * @user_data: User data to pass to @callback.
  *
- * Like hello_test_proxy_new() but takes a #GBusType instead of a #GDBusConnection.
+ * Like gdbus_test_proxy_new() but takes a #GBusType instead of a #GDBusConnection.
  *
  * When the operation is finished, @callback will be invoked in the thread-default main loop of the thread you are calling this method from (see g_main_context_push_thread_default()).
- * You can then call hello_test_proxy_new_for_bus_finish() to get the result of the operation.
+ * You can then call gdbus_test_proxy_new_for_bus_finish() to get the result of the operation.
  *
- * See hello_test_proxy_new_for_bus_sync() for the synchronous, blocking version of this constructor.
+ * See gdbus_test_proxy_new_for_bus_sync() for the synchronous, blocking version of this constructor.
  */
 void
-hello_test_proxy_new_for_bus (
+gdbus_test_proxy_new_for_bus (
     GBusType             bus_type,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -759,20 +759,20 @@ hello_test_proxy_new_for_bus (
     GAsyncReadyCallback  callback,
     gpointer             user_data)
 {
-  g_async_initable_new_async (HELLO_TYPE_TEST_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "com.yft.hello.test", NULL);
+  g_async_initable_new_async (GDBUS_TYPE_TEST_PROXY, G_PRIORITY_DEFAULT, cancellable, callback, user_data, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "com.yao.xie.gdbus.test", NULL);
 }
 
 /**
- * hello_test_proxy_new_for_bus_finish:
- * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to hello_test_proxy_new_for_bus().
+ * gdbus_test_proxy_new_for_bus_finish:
+ * @res: The #GAsyncResult obtained from the #GAsyncReadyCallback passed to gdbus_test_proxy_new_for_bus().
  * @error: Return location for error or %NULL
  *
- * Finishes an operation started with hello_test_proxy_new_for_bus().
+ * Finishes an operation started with gdbus_test_proxy_new_for_bus().
  *
- * Returns: (transfer full) (type helloTestProxy): The constructed proxy object or %NULL if @error is set.
+ * Returns: (transfer full) (type gdbusTestProxy): The constructed proxy object or %NULL if @error is set.
  */
-helloTest *
-hello_test_proxy_new_for_bus_finish (
+gdbusTest *
+gdbus_test_proxy_new_for_bus_finish (
     GAsyncResult        *res,
     GError             **error)
 {
@@ -782,13 +782,13 @@ hello_test_proxy_new_for_bus_finish (
   ret = g_async_initable_new_finish (G_ASYNC_INITABLE (source_object), res, error);
   g_object_unref (source_object);
   if (ret != NULL)
-    return HELLO_TEST (ret);
+    return GDBUS_TEST (ret);
   else
     return NULL;
 }
 
 /**
- * hello_test_proxy_new_for_bus_sync:
+ * gdbus_test_proxy_new_for_bus_sync:
  * @bus_type: A #GBusType.
  * @flags: Flags from the #GDBusProxyFlags enumeration.
  * @name: A bus name (well-known or unique).
@@ -796,16 +796,16 @@ hello_test_proxy_new_for_bus_finish (
  * @cancellable: (nullable): A #GCancellable or %NULL.
  * @error: Return location for error or %NULL
  *
- * Like hello_test_proxy_new_sync() but takes a #GBusType instead of a #GDBusConnection.
+ * Like gdbus_test_proxy_new_sync() but takes a #GBusType instead of a #GDBusConnection.
  *
  * The calling thread is blocked until a reply is received.
  *
- * See hello_test_proxy_new_for_bus() for the asynchronous version of this constructor.
+ * See gdbus_test_proxy_new_for_bus() for the asynchronous version of this constructor.
  *
- * Returns: (transfer full) (type helloTestProxy): The constructed proxy object or %NULL if @error is set.
+ * Returns: (transfer full) (type gdbusTestProxy): The constructed proxy object or %NULL if @error is set.
  */
-helloTest *
-hello_test_proxy_new_for_bus_sync (
+gdbusTest *
+gdbus_test_proxy_new_for_bus_sync (
     GBusType             bus_type,
     GDBusProxyFlags      flags,
     const gchar         *name,
@@ -814,9 +814,9 @@ hello_test_proxy_new_for_bus_sync (
     GError             **error)
 {
   GInitable *ret;
-  ret = g_initable_new (HELLO_TYPE_TEST_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "com.yft.hello.test", NULL);
+  ret = g_initable_new (GDBUS_TYPE_TEST_PROXY, cancellable, error, "g-flags", flags, "g-name", name, "g-bus-type", bus_type, "g-object-path", object_path, "g-interface-name", "com.yao.xie.gdbus.test", NULL);
   if (ret != NULL)
-    return HELLO_TEST (ret);
+    return GDBUS_TEST (ret);
   else
     return NULL;
 }
@@ -825,19 +825,19 @@ hello_test_proxy_new_for_bus_sync (
 /* ------------------------------------------------------------------------ */
 
 /**
- * helloTestSkeleton:
+ * gdbusTestSkeleton:
  *
- * The #helloTestSkeleton structure contains only private data and should only be accessed using the provided API.
+ * The #gdbusTestSkeleton structure contains only private data and should only be accessed using the provided API.
  */
 
 /**
- * helloTestSkeletonClass:
+ * gdbusTestSkeletonClass:
  * @parent_class: The parent class.
  *
- * Class structure for #helloTestSkeleton.
+ * Class structure for #gdbusTestSkeleton.
  */
 
-struct _helloTestSkeletonPrivate
+struct _gdbusTestSkeletonPrivate
 {
   GValue *properties;
   GList *changed_properties;
@@ -847,7 +847,7 @@ struct _helloTestSkeletonPrivate
 };
 
 static void
-_hello_test_skeleton_handle_method_call (
+_gdbus_test_skeleton_handle_method_call (
   GDBusConnection *connection G_GNUC_UNUSED,
   const gchar *sender G_GNUC_UNUSED,
   const gchar *object_path G_GNUC_UNUSED,
@@ -857,7 +857,7 @@ _hello_test_skeleton_handle_method_call (
   GDBusMethodInvocation *invocation,
   gpointer user_data)
 {
-  helloTestSkeleton *skeleton = HELLO_TEST_SKELETON (user_data);
+  gdbusTestSkeleton *skeleton = GDBUS_TEST_SKELETON (user_data);
   _ExtendedGDBusMethodInfo *info;
   GVariantIter iter;
   GVariant *child;
@@ -872,7 +872,7 @@ _hello_test_skeleton_handle_method_call (
   num_params = g_variant_n_children (parameters);
   num_extra = info->pass_fdlist ? 3 : 2;  paramv = g_new0 (GValue, num_params + num_extra);
   n = 0;
-  g_value_init (&paramv[n], HELLO_TYPE_TEST);
+  g_value_init (&paramv[n], GDBUS_TYPE_TEST);
   g_value_set_object (&paramv[n++], skeleton);
   g_value_init (&paramv[n], G_TYPE_DBUS_METHOD_INVOCATION);
   g_value_set_object (&paramv[n++], invocation);
@@ -899,7 +899,7 @@ _hello_test_skeleton_handle_method_call (
         g_dbus_gvariant_to_gvalue (child, &paramv[n++]);
       g_variant_unref (child);
     }
-  signal_id = g_signal_lookup (info->signal_name, HELLO_TYPE_TEST);
+  signal_id = g_signal_lookup (info->signal_name, GDBUS_TYPE_TEST);
   g_value_init (&return_value, G_TYPE_BOOLEAN);
   g_signal_emitv (paramv, signal_id, 0, &return_value);
   if (!g_value_get_boolean (&return_value))
@@ -911,7 +911,7 @@ _hello_test_skeleton_handle_method_call (
 }
 
 static GVariant *
-_hello_test_skeleton_handle_get_property (
+_gdbus_test_skeleton_handle_get_property (
   GDBusConnection *connection G_GNUC_UNUSED,
   const gchar *sender G_GNUC_UNUSED,
   const gchar *object_path G_GNUC_UNUSED,
@@ -920,13 +920,13 @@ _hello_test_skeleton_handle_get_property (
   GError **error,
   gpointer user_data)
 {
-  helloTestSkeleton *skeleton = HELLO_TEST_SKELETON (user_data);
+  gdbusTestSkeleton *skeleton = GDBUS_TEST_SKELETON (user_data);
   GValue value = G_VALUE_INIT;
   GParamSpec *pspec;
   _ExtendedGDBusPropertyInfo *info;
   GVariant *ret;
   ret = NULL;
-  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_hello_test_interface_info.parent_struct, property_name);
+  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_gdbus_test_interface_info.parent_struct, property_name);
   g_assert (info != NULL);
   pspec = g_object_class_find_property (G_OBJECT_GET_CLASS (skeleton), info->hyphen_name);
   if (pspec == NULL)
@@ -944,7 +944,7 @@ _hello_test_skeleton_handle_get_property (
 }
 
 static gboolean
-_hello_test_skeleton_handle_set_property (
+_gdbus_test_skeleton_handle_set_property (
   GDBusConnection *connection G_GNUC_UNUSED,
   const gchar *sender G_GNUC_UNUSED,
   const gchar *object_path G_GNUC_UNUSED,
@@ -954,13 +954,13 @@ _hello_test_skeleton_handle_set_property (
   GError **error,
   gpointer user_data)
 {
-  helloTestSkeleton *skeleton = HELLO_TEST_SKELETON (user_data);
+  gdbusTestSkeleton *skeleton = GDBUS_TEST_SKELETON (user_data);
   GValue value = G_VALUE_INIT;
   GParamSpec *pspec;
   _ExtendedGDBusPropertyInfo *info;
   gboolean ret;
   ret = FALSE;
-  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_hello_test_interface_info.parent_struct, property_name);
+  info = (_ExtendedGDBusPropertyInfo *) g_dbus_interface_info_lookup_property ((GDBusInterfaceInfo *) &_gdbus_test_interface_info.parent_struct, property_name);
   g_assert (info != NULL);
   pspec = g_object_class_find_property (G_OBJECT_GET_CLASS (skeleton), info->hyphen_name);
   if (pspec == NULL)
@@ -980,43 +980,43 @@ _hello_test_skeleton_handle_set_property (
   return ret;
 }
 
-static const GDBusInterfaceVTable _hello_test_skeleton_vtable =
+static const GDBusInterfaceVTable _gdbus_test_skeleton_vtable =
 {
-  _hello_test_skeleton_handle_method_call,
-  _hello_test_skeleton_handle_get_property,
-  _hello_test_skeleton_handle_set_property,
+  _gdbus_test_skeleton_handle_method_call,
+  _gdbus_test_skeleton_handle_get_property,
+  _gdbus_test_skeleton_handle_set_property,
   {NULL}
 };
 
 static GDBusInterfaceInfo *
-hello_test_skeleton_dbus_interface_get_info (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
+gdbus_test_skeleton_dbus_interface_get_info (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
 {
-  return hello_test_interface_info ();
+  return gdbus_test_interface_info ();
 }
 
 static GDBusInterfaceVTable *
-hello_test_skeleton_dbus_interface_get_vtable (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
+gdbus_test_skeleton_dbus_interface_get_vtable (GDBusInterfaceSkeleton *skeleton G_GNUC_UNUSED)
 {
-  return (GDBusInterfaceVTable *) &_hello_test_skeleton_vtable;
+  return (GDBusInterfaceVTable *) &_gdbus_test_skeleton_vtable;
 }
 
 static GVariant *
-hello_test_skeleton_dbus_interface_get_properties (GDBusInterfaceSkeleton *_skeleton)
+gdbus_test_skeleton_dbus_interface_get_properties (GDBusInterfaceSkeleton *_skeleton)
 {
-  helloTestSkeleton *skeleton = HELLO_TEST_SKELETON (_skeleton);
+  gdbusTestSkeleton *skeleton = GDBUS_TEST_SKELETON (_skeleton);
 
   GVariantBuilder builder;
   guint n;
   g_variant_builder_init (&builder, G_VARIANT_TYPE ("a{sv}"));
-  if (_hello_test_interface_info.parent_struct.properties == NULL)
+  if (_gdbus_test_interface_info.parent_struct.properties == NULL)
     goto out;
-  for (n = 0; _hello_test_interface_info.parent_struct.properties[n] != NULL; n++)
+  for (n = 0; _gdbus_test_interface_info.parent_struct.properties[n] != NULL; n++)
     {
-      GDBusPropertyInfo *info = _hello_test_interface_info.parent_struct.properties[n];
+      GDBusPropertyInfo *info = _gdbus_test_interface_info.parent_struct.properties[n];
       if (info->flags & G_DBUS_PROPERTY_INFO_FLAGS_READABLE)
         {
           GVariant *value;
-          value = _hello_test_skeleton_handle_get_property (g_dbus_interface_skeleton_get_connection (G_DBUS_INTERFACE_SKELETON (skeleton)), NULL, g_dbus_interface_skeleton_get_object_path (G_DBUS_INTERFACE_SKELETON (skeleton)), "com.yft.hello.test", info->name, NULL, skeleton);
+          value = _gdbus_test_skeleton_handle_get_property (g_dbus_interface_skeleton_get_connection (G_DBUS_INTERFACE_SKELETON (skeleton)), NULL, g_dbus_interface_skeleton_get_object_path (G_DBUS_INTERFACE_SKELETON (skeleton)), "com.yao.xie.gdbus.test", info->name, NULL, skeleton);
           if (value != NULL)
             {
               g_variant_take_ref (value);
@@ -1030,16 +1030,16 @@ out:
 }
 
 static void
-hello_test_skeleton_dbus_interface_flush (GDBusInterfaceSkeleton *_skeleton)
+gdbus_test_skeleton_dbus_interface_flush (GDBusInterfaceSkeleton *_skeleton)
 {
 }
 
 static void
-_hello_test_on_signal_test_status (
-    helloTest *object,
+_gdbus_test_on_signal_test_signal (
+    gdbusTest *object,
     gint arg_status)
 {
-  helloTestSkeleton *skeleton = HELLO_TEST_SKELETON (object);
+  gdbusTestSkeleton *skeleton = GDBUS_TEST_SKELETON (object);
 
   GList      *connections, *l;
   GVariant   *signal_variant;
@@ -1051,43 +1051,43 @@ _hello_test_on_signal_test_status (
     {
       GDBusConnection *connection = l->data;
       g_dbus_connection_emit_signal (connection,
-        NULL, g_dbus_interface_skeleton_get_object_path (G_DBUS_INTERFACE_SKELETON (skeleton)), "com.yft.hello.test", "testStatus",
+        NULL, g_dbus_interface_skeleton_get_object_path (G_DBUS_INTERFACE_SKELETON (skeleton)), "com.yao.xie.gdbus.test", "testSignal",
         signal_variant, NULL);
     }
   g_variant_unref (signal_variant);
   g_list_free_full (connections, g_object_unref);
 }
 
-static void hello_test_skeleton_iface_init (helloTestIface *iface);
+static void gdbus_test_skeleton_iface_init (gdbusTestIface *iface);
 #if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
-G_DEFINE_TYPE_WITH_CODE (helloTestSkeleton, hello_test_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
-                         G_ADD_PRIVATE (helloTestSkeleton)
-                         G_IMPLEMENT_INTERFACE (HELLO_TYPE_TEST, hello_test_skeleton_iface_init))
+G_DEFINE_TYPE_WITH_CODE (gdbusTestSkeleton, gdbus_test_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
+                         G_ADD_PRIVATE (gdbusTestSkeleton)
+                         G_IMPLEMENT_INTERFACE (GDBUS_TYPE_TEST, gdbus_test_skeleton_iface_init))
 
 #else
-G_DEFINE_TYPE_WITH_CODE (helloTestSkeleton, hello_test_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
-                         G_IMPLEMENT_INTERFACE (HELLO_TYPE_TEST, hello_test_skeleton_iface_init))
+G_DEFINE_TYPE_WITH_CODE (gdbusTestSkeleton, gdbus_test_skeleton, G_TYPE_DBUS_INTERFACE_SKELETON,
+                         G_IMPLEMENT_INTERFACE (GDBUS_TYPE_TEST, gdbus_test_skeleton_iface_init))
 
 #endif
 static void
-hello_test_skeleton_finalize (GObject *object)
+gdbus_test_skeleton_finalize (GObject *object)
 {
-  helloTestSkeleton *skeleton = HELLO_TEST_SKELETON (object);
+  gdbusTestSkeleton *skeleton = GDBUS_TEST_SKELETON (object);
   g_list_free_full (skeleton->priv->changed_properties, (GDestroyNotify) _changed_property_free);
   if (skeleton->priv->changed_properties_idle_source != NULL)
     g_source_destroy (skeleton->priv->changed_properties_idle_source);
   g_main_context_unref (skeleton->priv->context);
   g_mutex_clear (&skeleton->priv->lock);
-  G_OBJECT_CLASS (hello_test_skeleton_parent_class)->finalize (object);
+  G_OBJECT_CLASS (gdbus_test_skeleton_parent_class)->finalize (object);
 }
 
 static void
-hello_test_skeleton_init (helloTestSkeleton *skeleton)
+gdbus_test_skeleton_init (gdbusTestSkeleton *skeleton)
 {
 #if GLIB_VERSION_MAX_ALLOWED >= GLIB_VERSION_2_38
-  skeleton->priv = hello_test_skeleton_get_instance_private (skeleton);
+  skeleton->priv = gdbus_test_skeleton_get_instance_private (skeleton);
 #else
-  skeleton->priv = G_TYPE_INSTANCE_GET_PRIVATE (skeleton, HELLO_TYPE_TEST_SKELETON, helloTestSkeletonPrivate);
+  skeleton->priv = G_TYPE_INSTANCE_GET_PRIVATE (skeleton, GDBUS_TYPE_TEST_SKELETON, gdbusTestSkeletonPrivate);
 #endif
 
   g_mutex_init (&skeleton->priv->lock);
@@ -1095,41 +1095,41 @@ hello_test_skeleton_init (helloTestSkeleton *skeleton)
 }
 
 static void
-hello_test_skeleton_class_init (helloTestSkeletonClass *klass)
+gdbus_test_skeleton_class_init (gdbusTestSkeletonClass *klass)
 {
   GObjectClass *gobject_class;
   GDBusInterfaceSkeletonClass *skeleton_class;
 
   gobject_class = G_OBJECT_CLASS (klass);
-  gobject_class->finalize = hello_test_skeleton_finalize;
+  gobject_class->finalize = gdbus_test_skeleton_finalize;
 
   skeleton_class = G_DBUS_INTERFACE_SKELETON_CLASS (klass);
-  skeleton_class->get_info = hello_test_skeleton_dbus_interface_get_info;
-  skeleton_class->get_properties = hello_test_skeleton_dbus_interface_get_properties;
-  skeleton_class->flush = hello_test_skeleton_dbus_interface_flush;
-  skeleton_class->get_vtable = hello_test_skeleton_dbus_interface_get_vtable;
+  skeleton_class->get_info = gdbus_test_skeleton_dbus_interface_get_info;
+  skeleton_class->get_properties = gdbus_test_skeleton_dbus_interface_get_properties;
+  skeleton_class->flush = gdbus_test_skeleton_dbus_interface_flush;
+  skeleton_class->get_vtable = gdbus_test_skeleton_dbus_interface_get_vtable;
 
 #if GLIB_VERSION_MAX_ALLOWED < GLIB_VERSION_2_38
-  g_type_class_add_private (klass, sizeof (helloTestSkeletonPrivate));
+  g_type_class_add_private (klass, sizeof (gdbusTestSkeletonPrivate));
 #endif
 }
 
 static void
-hello_test_skeleton_iface_init (helloTestIface *iface)
+gdbus_test_skeleton_iface_init (gdbusTestIface *iface)
 {
-  iface->test_status = _hello_test_on_signal_test_status;
+  iface->test_signal = _gdbus_test_on_signal_test_signal;
 }
 
 /**
- * hello_test_skeleton_new:
+ * gdbus_test_skeleton_new:
  *
- * Creates a skeleton object for the D-Bus interface <link linkend="gdbus-interface-com-yft-hello-test.top_of_page">com.yft.hello.test</link>.
+ * Creates a skeleton object for the D-Bus interface <link linkend="gdbus-interface-com-yao-xie-gdbus-test.top_of_page">com.yao.xie.gdbus.test</link>.
  *
- * Returns: (transfer full) (type helloTestSkeleton): The skeleton object.
+ * Returns: (transfer full) (type gdbusTestSkeleton): The skeleton object.
  */
-helloTest *
-hello_test_skeleton_new (void)
+gdbusTest *
+gdbus_test_skeleton_new (void)
 {
-  return HELLO_TEST (g_object_new (HELLO_TYPE_TEST_SKELETON, NULL));
+  return GDBUS_TEST (g_object_new (GDBUS_TYPE_TEST_SKELETON, NULL));
 }
 

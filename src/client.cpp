@@ -1,10 +1,10 @@
-#include "Hello.h"
+#include "Test.h"
 #include <gio/gio.h>
 #include <stdio.h>
 
-helloTest *proxy;
+gdbusTest *proxy;
 
-static gboolean test_status_handler(helloTest *object, gint value,
+static gboolean test_status_handler(gdbusTest *object, gint value,
                                     gpointer userdata) {
   printf("test_status_handler invoked! %d \n", value);
   return TRUE;
@@ -28,9 +28,9 @@ int main(int argc, char const *argv[]) {
     return 0;
   }
 
-  proxy =
-      hello_test_proxy_new_sync(conn, G_DBUS_PROXY_FLAGS_NONE, "com.yft.hello",
-                                "/com/yft/hello", NULL, &proxyerror);
+  proxy = gdbus_test_proxy_new_sync(conn, G_DBUS_PROXY_FLAGS_NONE,
+                                    "com.yao.xie.gdbus.test",
+                                    "/com/yao/xie/test", NULL, &proxyerror);
 
   if (proxy == NULL) {
     printf("hello_test_proxy_new_sync error! %s \n", proxyerror->message);
@@ -38,11 +38,11 @@ int main(int argc, char const *argv[]) {
     return 0;
   }
   //注册signal处理函数
-  g_signal_connect(proxy, "test-status", G_CALLBACK(test_status_handler), NULL);
+  g_signal_connect(proxy, "test-signal", G_CALLBACK(test_status_handler), NULL);
 
   GError *callError = NULL;
   //调用server方法
-  hello_test_call_set_version_sync(proxy, "v1.0", NULL, &callError);
+  gdbus_test_call_set_name_sync(proxy, "v1.0", NULL, &callError);
   if (callError == NULL) {
     printf("call_set_version_sync success\n");
   } else {
