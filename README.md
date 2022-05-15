@@ -18,26 +18,7 @@
 
         车载TBOX终端应用系统：我们可以将其划分成这些模块——车辆数据采集模块、车辆数据处理模块、车辆数据存储模块、与TSP后台服务器通信模块，可能还附加与车内移动设备的通信模块。这些模块也都以进程的方式实现，他们之间的通信，我们都将采用GDBus技术。
 
-        这么多进程需要通信，可能有一对一，可能有一对多，多对多的通信方式。为简单起见，我们假设某个系统中就只有两个进程需要通信——我们称之为Server和Client。基于GDBus的进程间通信，最最重要的就是要定义好Server和Client之间的通信接口。在GDBus编程框架下，我们使用xml文件来描述接口。按照惯常的思路，就是一种数据，一个接口，N多种数据，就要N多个接口，这样的思路简单、便于理解。比如下面的xml文件：
-```
-<?xml version="1.0" encoding="UTF-8" ?>  
-<node name="/com/company/project/s">
-  <interface name="com.company.project.s">
-    <method name="SetSomeData">          <!-- method 方法：定义了server提供给client调用的接口名SetSomeData -->
-        <arg type="i" name="datatype" direction="in" /> <!-- 定义了接口SetSomeData的参数1：datatype；direction表示值传递方向：“in”表示参数值的传递方向是client到server -->
-	<arg type="i" name="data" direction="in" /> <!-- 同上，定义了接口函数SetSomeData的另一个参数，type表示参数类型：“i“表示为gint类型-->
-    </method>
-    <method name="GetSomeData"> <!-- 定义了server的另一个接口函数GetSomeData -->
-        <arg type="i" name="datatype" direction="in" /> <!--  接口函数GetSomeData 的参数1，类型为gint，名字为datatype，值传递方向为 client到 server -->
-        <arg type="i" name="retdata" direction="out" /> <!-- 参数2，类型为gint，名字为retdata，值传递方向为 server到client -->
-    </method> 
-    <signal name="SendMessage"> <!-- 此接口为 server 端使用，不提供给client。server使用此接口，主动向client端发送数据，signal定义的接口是异步的 -->
-	<arg type="i" name="signal_id"> <!-- signal接口函数SendMessage 的参数-->
-    </signal>
-  </interface>
-</node>
-```
-  上面的xml文件，共描述了三个接口：SetSomData、GetSomeData、SendMessage。其注释都已详细附上。
+        这么多进程需要通信，可能有一对一，可能有一对多，多对多的通信方式。为简单起见，我们假设某个系统中就只有两个进程需要通信——我们称之为Server和Client。基于GDBus的进程间通信，最最重要的就是要定义好Server和Client之间的通信接口。在GDBus编程框架下，我们使用xml文件来描述接口。按照惯常的思路，就是一种数据，一个接口，N多种数据，就要N多个接口，这样的思路简单、便于理解。
 
         但是，这样的接口描述方式存在一个非常不便的地方——每种数据一个接口，如果进程间需要交换的数据类型很多的时候，就需要定义非常多的接口，这样xml文件就会变得庞大；而且如果进程间交换的某些数据量很大时，这样的接口描述就无能为力了。因此，有必要找到一种通用的，又能交换大量数据的接口描述方式。
 
@@ -51,21 +32,19 @@ Server端提供给Client端调用的接口应该有：GET、SET；同时Server�
 因此，基于上述抽象，我们的GDBus接口描述文档应该如下，保存为interface-S.xml文件：
 ```
 <?xml version="1.0" encoding="UTF-8" ?>
-<node name="/com/company/project/s">
-  <interface name="com.company.project.demo.s">
-    <method name="Client_request"> <!-- 提供给客户端使用的接口 -->
-                <arg type="a*" name="input_array" direction="in" /> <!-- Client 传递给Server 的数据。被抽象为一个通用数组 a* -->
-                <arg type="a*" name="output_array" direction="out" /> <!-- client端从server端get 的数据,通过这个参数传递到client端.也是一个抽象的数组 a*-->
-                <arg type="i" name="result" direction="out" /> <!-- 接口的返回值，一个整型数 -->
-    </method>
-    <signal name="Server_message"> <!-- 服务端主动发送数据到客户端 -->
-                <arg type="a{ii}" name="message_array" /> <!-- 由key 和 value 组成的 dictionary。仅仅是示例。可以是其他类型 -->
-    </signal>
-  </interface>
+<node name="/com/yao/xie/test">
+	<interface name="com.yao.xie.gdbus.test">
+		<method name="setName">
+			<arg name="name" type="s" direction="in" />
+		</method>
+		<signal name="testSignal">
+			<arg name="status" type="i" />
+		</signal>
+	</interface>
 </node>
 ```
 
-对于文档interface-S.xml中的数据类型 a*，a{ii}，大家可以自行百度 点击打开链接，或者直接看glib的源码中GVariant数据类型（gvarianttype.h）。
+Test.xml中的数据类型，大家可以自行百度 点击打开链接，或者直接看glib的源码中GVariant数据类型（gvarianttype.h）。
 
 至此，我们已经抽象出所有的通信接口。接下来，我们要做的工作就是，将这份通用的接口文件转换为C代码文件，以便加入到我们的工程
 2. 产生与xml文件对应的C源文件和库文件
@@ -73,18 +52,14 @@ Server端提供给Client端调用的接口应该有：GET、SET；同时Server�
 
 在终端执行如下命令：
 
-gdbus-codegen --generate-c-code=libgdbusdemo_s interface-S.xml
+gdbus-codegen --generate-c-code=Test --c-namespace gdbus --interface-prefix com.yao.xie.gdbus. framework/interface/Test.xml
 
-或者写一个shell脚本，将上面的过程写进去，这样就不用每次敲代码，只需执行下脚本，即可产生我们需要的C源文件：libgdbusdemo_s.c libgdbusdemo_s.h。这两个源文件就是GDBus对上面的xml文件的翻译。两个源文件的内容，这里不粘贴出来，大家可以自己试试，然后看看这两个文件里面到底有什么神秘的东东。
+或者写一个shell脚本，将上面的过程写进去，这样就不用每次敲代码，只需执行下脚本，即可产生我们需要的C源文件：Test.c Test.h。这两个源文件就是GDBus对上面的xml文件的翻译。两个源文件的内容，这里不粘贴出来，大家可以自己试试，然后看看这两个文件里面到底有什么神秘的东东。
 
         至此，我们就可以将这两个文件加入到我们的工程中，一起和我们的其他源文件参与编译了。
 
-        但是，这还不是最合理的设计，我们的设计应该遵循模块化设计思想，所以，我们可以将这两个文件单独做成一个静态库。在编译我们的工程项目时，链接这个库即可。Linux下，从源文件生成静态库的方法，大家应该不陌生吧。按照下面的步骤即可实现：
+        但是，这还不是最合理的设计，我们的设计应该遵循模块化设计思想，所以，我们可以将这两个文件单独做成一个静态库。在编译我们的工程项目时，链接这个库即可。Linux下，从源文件生成静态库的方法，大家应该不陌生吧。
 
-1. gcc -c libgdbusdemo_s.c
+这样就生成了接口库文件 Test.so。该库文件server端和client都要用到，只是server端和client端所调用的接口不一样而已。
 
-2. ar crv libgdbusdemo_s.a libgdbusdemo_s.o
-
-这样就生成了接口库文件 libgdbusdemo_s.a。该库文件server端和client都要用到，只是server端和client端所调用的接口不一样而已。
-
-其实，这第2步的整个过程，都可以写入shell脚本文件中，然后保存为make.sh，简化了后续的开发：
+其实，这第2步的整个过程，都可以写入shell脚本文件中，然后保存为run.sh，简化了后续的开发：
