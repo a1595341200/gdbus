@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<node name="/com/yft/hello">
+	<interface name="com.yft.hello.test">
+		<method name="setVersion">
+			<arg name="version" type="s" direction="in" />
+		</method>
+		<signal name="testStatus">
+			<arg name="status" type="i" />
+		</signal>
+	</interface>
+</node>
